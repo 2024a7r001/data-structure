@@ -84,7 +84,7 @@ int main(){
         printf("8. Sort Elements\n");
         printf("9. Display List\n");
         printf("10. Exit\n");
-        int choice;
+        int choice, value, pos;
         printf("Enter choice : ");
         scanf("%d" , &choice);
         switch(choice){
