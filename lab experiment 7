@@ -60,6 +60,76 @@ void insertNodeAtAnyPos(int ele, int pos){
     }
     
 }
+void deleteNodeFromBeg(){
+    if(head=NULL)
+    printf("Linked List is empty !!!!\n");
+    else{
+        Node *t = head;
+        head = head->next;
+        free(t);
+        printf("Node deleted !!!\n");
+    }
+}
+void deleteNodeFromEnd(){
+    if(head == NULL)
+    printf("List is empty !!!\n");
+    else{
+        Node *t;
+        if(head->next == NULL){
+            t = head;
+            head = NULL;
+        }
+        else{
+            Node* temp = head;
+            while(temp->next->next != NULL){
+                temp = temp->next;
+            }
+            t = temp->next;
+            temp->next = NULL;
+        }
+    free(t);
+    printf("Node deleted !!!\n");
+}
+}
+void deleteNodeFromAnyPos(int pos){
+    if(head == NULL)
+    printf("List is empty");
+    else if(pos==1)
+    deleteNodeFromBeg();
+    else{
+        int i = 1;
+        Node* temp = head;
+        while(i<pos-1 && temp->next != NULL){
+            i++;
+            temp = temp->next;
+        }
+        if(temp->next != NULL && pos>0){
+            Node *t = temp->next;
+            temp->next = temp->next->next;
+        free(t);
+        printf("Node deleted !!!\n");
+        }
+        else
+        printf("Invalid POsition !!!\n");
+    }
+    
+}
+void search(int target){
+    if(head == NULL)
+    printf("List is empty !!!\n");
+    else{
+        Node* temp = head;
+        while(temp != NULL){
+            if(temp->data == target){
+                printf("Found !!!\n");
+                return;
+                
+            }
+        }
+        printf("Not found !!!\n");
+    }
+    
+}
  void display(){
  if(head=NULL)
    printf("Linked List is empty !!!!\n");
@@ -84,7 +154,7 @@ int main(){
         printf("8. Sort Elements\n");
         printf("9. Display List\n");
         printf("10. Exit\n");
-        int choice, value, pos;
+        int choice, value , pos;
         printf("Enter choice : ");
         scanf("%d" , &choice);
         switch(choice){
@@ -99,6 +169,9 @@ int main(){
              insertNodeAtEnd(value);
             break;
             case 3:
+             printf("Enter Position : ");
+             scanf("%d" , &pos);
+            insertNodeAtAnyPos(value , pos);
             break;
             case 4:
             break;
