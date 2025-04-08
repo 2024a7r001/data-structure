@@ -158,7 +158,7 @@ int main(){
         printf("Enter choice : ");
         scanf("%d" , &choice);
         switch(choice){
-            case 1:
+         case 1:
              printf("Enter Value : ");
           scanf("%d" , &value);
             insertNodeInBeg(value);
@@ -174,14 +174,22 @@ int main(){
             insertNodeAtAnyPos(value , pos);
             break;
             case 4:
+            deleteNodeFromBeg();
             break;
             case 5:
+            deleteNodeFromEnd();
             break;
             case 6:
+            printf("Enter Position : ")
+            scanf("%d" , &value);
             break;
             case 7:
+            printf("Enter Value : ");
+            scanf("%d" , &value);
+            search(value);
             break;
             case 8:
+           display();
             break;
             case 9:
             display();
