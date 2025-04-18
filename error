@@ -1,32 +1,4 @@
-//WAP to implement queue using linked list
-#include<stdio.h>
-#include<stdlib.h>
-#include<limits.h>
-typedef struct node
-{
-    int data;
-    struct node *next;
-}Node;
-Node* front = NULL, *rear = NULL;
-void enqueue(int ele)
-{
-    Node* temp = (Node*)malloc(sizeof(Node));
-    if (temp == NULL)
-    {
-        printf("Queue Overflow !!!\n");
-    }
-    temp -> data = ele;
-    temp -> next = NULL;
-    if (front == NULL)
-    {
-        front = rear = temp;
-    }
-    else
-    {
-        rear -> next = temp;
-        rear = temp;
-    }
-    printf("Inserted %d into the Queue\n",ele);
+/
 }
 int dequeue()
 {
